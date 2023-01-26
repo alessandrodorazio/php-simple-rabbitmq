@@ -30,10 +30,6 @@ class ConnectionAdapter {
 		$this->channel = $this->connection->channel();
 	}
 
-	public function getConnection(): AMQPStreamConnection {
-		return $this->connection;
-	}
-
 	public function getChannel(): AMQPChannel {
 		return $this->channel;
 	}

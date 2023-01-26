@@ -2,7 +2,7 @@
 
 namespace App;
 
-readonly class MessageReceiver {
+readonly class MessageConsumer {
 	use CanDeclareQueue;
 
 	public function __construct(
@@ -16,7 +16,6 @@ readonly class MessageReceiver {
 	 * @throws \Exception
 	 */
 	public function receiveMessages(\Closure $callback): void {
-		echo " [*] Waiting for messages. To exit press CTRL+C\n";
 		$this->consumeQueueMessages($callback);
 		$this->connectionAdapter->close();
 	}

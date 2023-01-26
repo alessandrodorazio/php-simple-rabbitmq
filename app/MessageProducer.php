@@ -4,7 +4,7 @@ namespace App;
 
 use PhpAmqpLib\Message\AMQPMessage;
 
-readonly class MessageSender {
+readonly class MessageProducer {
 	use CanDeclareQueue;
 
 	public function __construct(

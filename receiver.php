@@ -1,6 +1,6 @@
 <?php
 
-use App\MessageReceiver;
+use App\MessageConsumer;
 use Dotenv\Dotenv;
 use PhpAmqpLib\Message\AMQPMessage;
 
@@ -14,5 +14,5 @@ $callback = function (AMQPMessage $msg) {
 	echo ' [x] Received ', $msg->body, "\n";
 };
 
-$receiver = new MessageReceiver('default', new \App\ConnectionAdapter());
+$receiver = new MessageConsumer('default', new \App\ConnectionAdapter());
 $receiver->receiveMessages($callback);
